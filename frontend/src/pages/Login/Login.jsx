@@ -1,8 +1,29 @@
 import './login.scss';
 
+import { useState } from 'react';
+
 export default function Login() {
+
+    const [formData, setFormData] = useState({
+            login: "",
+            senha: ""
+        });
+    
+        const handleChange = (e) => {
+            setFormData({ ...formData, [e.target.name]: e.target.value });
+            console.log(formData);
+        };
+    
+        const handleSubmit = async (e) => {
+            e.preventDefault();
+            const dataToSend = {
+            ...formData,
+            };
+            let response = await api.post("/login", dataToSend);
+        };
+    
     return(
-        <body>
+        <main>
             <div className='login-page'>
                 <div className='login-logo'>
                     <img src='src/assets/images/logo.png'/>
@@ -23,21 +44,21 @@ export default function Login() {
 
                         </div>
 
-                        <div className='login-input-fields'>
-                            
+                        <form onSubmit={handleSubmit} className='login-input-fields'>
+
                             <div>
                                 <label>Nome de usuário ou Email</label> <br/>
-                                <input/>
+                                <input type='text' name='login' value={formData.username} onChange={handleChange}/>
                             </div>
 
                             <div>
                                 <label>Senha</label> <br/>
-                                <input/>
+                                <input type='password' name='senha' value={formData.email} onChange={handleChange}/>
                             </div>
 
-                            <button>Entrar</button>
+                            <button type='submit' style={{width: "10vh"}}>Entrar</button>
 
-                        </div>
+                        </form>
 
                         <div>
                             Não tem login? Se cadastre clicando <a href='/'>aqui</a>
@@ -46,6 +67,6 @@ export default function Login() {
                     </div>
                 </div>
             </div>
-        </body>
+        </main>
     )
 }
