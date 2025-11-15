@@ -8,17 +8,17 @@ body{
     align-items: center;
     justify-content: center;
 
-    .page{
+    .cadastro-page{
 
         display: flex;
         justify-content: center;
         justify-content: space-between;
 
-        .logo{
+        .cadastro-logo{
             margin-right: 200px;
         }
 
-        .main-block{
+        .cadastro-main-block{
             background-color: #fff9f9;
             height: 700px;
             width: 500px;
@@ -33,7 +33,7 @@ body{
             align-items: center;
             justify-content: center;
 
-            .block-content{
+            .cadastro-block-content{
 
                 display: flex;
                 flex-direction: column;
@@ -42,12 +42,12 @@ body{
 
                 margin-bottom: 100px;
 
-                .presentation{
+                .cadastro-presentation{
                     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                     font-size: 50px;
                 }
 
-                .input-fields{
+                .cadastro-input-fields{
                     display: flex;
                     flex-direction: column;
                     gap:50px;

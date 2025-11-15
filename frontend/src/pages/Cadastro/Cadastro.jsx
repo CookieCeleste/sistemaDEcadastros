@@ -3,19 +3,19 @@ import './cadastro.scss';
 export default function Login() {
     return(
         <body>
-            <div className='page'>
-                <div className='logo'>
+            <div className='cadastro-page'>
+                <div className='cadastro-logo'>
                     <img src='src/assets/images/logo.png'/>
                 </div>
 
-                <div className='main-block'>
+                <div className='cadastro-main-block'>
                     <div className='block-content'> 
 
-                        <div className='presentation'>
+                        <div className='cadastro-presentation'>
                             Cadastro
                         </div>
 
-                        <div className='input-fields'>
+                        <div className='cadastro-input-fields'>
                             
                             <div>
                                 <label>Nome de usuário</label> <br/>
