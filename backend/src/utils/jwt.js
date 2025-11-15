@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 
-const KEY = 'backend_secret'
+const KEY = 'overthegardenwall'
 
 
 export function generateToken(userInfo) {
