@@ -1,11 +1,9 @@
-import './login.scss';
-
 import { useState } from 'react';
 
-export default function Login() {
+export default function LoginAdmin() {
 
     const [formData, setFormData] = useState({
-            login: "",
+            email: "",
             senha: ""
         });
     
@@ -24,22 +22,23 @@ export default function Login() {
     
     return(
         <main>
-            <div className='login-page'>
-                <div className='login-logo'>
-                    <img src='src/assets/images/logo.png'/>
-                </div>
+            <div style={{color: "red"}} className='login-page'>
 
+                <a href='/'>
+                    <img width={30} height={30} src='https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/home-page-white-icon.png'/>
+                </a>
+                
                 <div className='login-main-block'>
                     <div className='login-block-content'> 
 
                         <div className='login-presentation'>
 
                             <div>
-                                <img height={300} src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_GdbWmck8jaQKQhTYt9dY3srsm8bqDL3_m_QB8OCMCfnO5LonfqsLOKG8arqpTfgzAssUMFCZJ-Q2lxaa2u8kcDjxVOr0e05ouzFXIC7YScekeqh8Z1f8vvKVadIS7fkO9tCn6RhgxBwp/s1600/no+anime+voce+vai+ver+ela+vestida+de+macacao+de+pelucia+uma+hora+e+outra+vestida+de+minisaia+safada.gif'/>
+                                <img height={300} src='https://i3.ruliweb.com/cmt/22/02/11/17ee91a5ad533b2b6.gif'/>
                             </div>
 
                             <div>
-                                Login
+                                ADMIN
                             </div>
 
                         </div>
@@ -47,8 +46,8 @@ export default function Login() {
                         <form onSubmit={handleSubmit} className='login-input-fields'>
 
                             <div>
-                                <label>Nome de usuário ou Email</label> <br/>
-                                <input type='text' name='login' value={formData.login} onChange={handleChange}/>
+                                <label>Email</label> <br/>
+                                <input type='email' name='email' value={formData.email} onChange={handleChange}/>
                             </div>
 
                             <div>
@@ -59,10 +58,6 @@ export default function Login() {
                             <button type='submit' style={{width: "10vh"}}>Entrar</button>
 
                         </form>
-
-                        <div>
-                            Não tem login? Se cadastre clicando <a href='/cadastro'>aqui</a>
-                        </div>
 
                     </div>
                 </div>

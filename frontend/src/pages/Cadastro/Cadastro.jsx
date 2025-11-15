@@ -27,9 +27,9 @@ export default function Cadastro() {
     return(
         <main>
             <div className='cadastro-page'>
-                <div className='cadastro-logo'>
+                <a href='/' className='cadastro-logo'>
                     <img src='src/assets/images/logo.png'/>
-                </div>
+                </a>
 
                 <div className='cadastro-main-block'>
                     <div className='cadastro-block-content'> 
