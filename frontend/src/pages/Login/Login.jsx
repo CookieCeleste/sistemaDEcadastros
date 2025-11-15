@@ -2,6 +2,8 @@ import './login.scss';
 
 import { useState } from 'react';
 
+import LoginGif from '../../assets/images/login.gif'
+
 export default function Login() {
 
     const [formData, setFormData] = useState({
@@ -35,7 +37,7 @@ export default function Login() {
                         <div className='login-presentation'>
 
                             <div>
-                                <img height={300} src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_GdbWmck8jaQKQhTYt9dY3srsm8bqDL3_m_QB8OCMCfnO5LonfqsLOKG8arqpTfgzAssUMFCZJ-Q2lxaa2u8kcDjxVOr0e05ouzFXIC7YScekeqh8Z1f8vvKVadIS7fkO9tCn6RhgxBwp/s1600/no+anime+voce+vai+ver+ela+vestida+de+macacao+de+pelucia+uma+hora+e+outra+vestida+de+minisaia+safada.gif'/>
+                                <img height={300} src={LoginGif}/>
                             </div>
 
                             <div>

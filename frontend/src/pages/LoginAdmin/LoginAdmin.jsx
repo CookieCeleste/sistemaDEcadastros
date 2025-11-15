@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import LoginAdm from '../../assets/images/loginADM.gif'
+
 export default function LoginAdmin() {
 
     const [formData, setFormData] = useState({
@@ -34,7 +36,7 @@ export default function LoginAdmin() {
                         <div className='login-presentation'>
 
                             <div>
-                                <img height={300} src='https://i3.ruliweb.com/cmt/22/02/11/17ee91a5ad533b2b6.gif'/>
+                                <img height={300} src={LoginAdm}/>
                             </div>
 
                             <div>
