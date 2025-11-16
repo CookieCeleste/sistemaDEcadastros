@@ -2,6 +2,8 @@ import './cadastro.scss';
 
 import { useState } from 'react';
 
+import api from '../../api.js'
+
 export default function Cadastro() {
 
     const [formData, setFormData] = useState({
@@ -20,7 +22,12 @@ export default function Cadastro() {
         const dataToSend = {
         ...formData,
         };
-        let response = await api.post("/cadastro/conta", dataToSend);
+        try {
+            let response = await api.post("/cadastrar", dataToSend);
+        }
+        catch (err) {
+            console.log(err);
+        }
     };
 
 

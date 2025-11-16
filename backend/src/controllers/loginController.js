@@ -1,4 +1,4 @@
-import * as repo from "../repositories/loginRepositories.js";
+import * as repo from "../repositories/loginRepository.js";
 
 import { generateToken } from "../utils/jwt.js";
 import { getAuthentication } from "../utils/jwt.js";
@@ -8,23 +8,25 @@ const autenticador = getAuthentication();
 import { Router } from "express";
 const endpoints = Router();
 
-endpoints.post("/cadastro", async (req, res) => {
+endpoints.post("/cadastrar", async (req, res) => {
   let novoCadastro = req.body;
 
   let email = req.body.email;
 
   try {
-    const existente = await repo.buscarUsuarioPorEmail(email);
+    // const existente = await repo.listarPorEmail(email);
 
-    if (existente) {
-      return res.status(400).send({ error: "Usuário já cadastrado" });
-    }
+    // if (existente.length > 0) {
+    //    res.status(400).send({ error: "Usuário já cadastrado" });
+    // }
+    // else{
+      await repo.cadastrarUsuario(novoCadastro);
+      return res.send("Usuário cadastrado com sucesso!");
+    // }
 
-    const usuario = await repo.cadastrarUsuario(novoCadastro);
-    res.send("Usuário cadastrado com sucesso!");
   } catch (err) {
     console.error(err);
-    res.status(500).send({ error: "Erro ao cadastrar usuário" });
+    return res.status(500).send({ error: "Erro ao cadastrar usuário" });
   }
 });
 

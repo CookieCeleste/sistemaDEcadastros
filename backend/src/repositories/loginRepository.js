@@ -57,5 +57,3 @@ export async function listarPorEmail(email) {
   const [registros] = await connection.query(cmd, [email]);
   return registros[0];
 }
-
-
